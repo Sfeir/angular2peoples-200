@@ -14,9 +14,4 @@ describe('App: Angularpeople200', () => {
       inject([Angularpeople200AppComponent], (app: Angularpeople200AppComponent) => {
     expect(app).toBeTruthy();
   }));
-
-  it('should have as title \'angularpeople-200 works!\'',
-      inject([Angularpeople200AppComponent], (app: Angularpeople200AppComponent) => {
-    expect(app.title).toEqual('angularpeople-200 works!');
-  }));
 });

@@ -9,6 +9,18 @@ const map: any = {
 const packages: any = {
 };
 
+// Angular Material 2 Packages to load.
+var materialPackages = [
+  'core', 'toolbar', 'button', 'card', 'checkbox', 'icon', 'input', 'list', 'progress-bar',
+  'progress-circle', 'radio', 'sidenav'
+];
+
+materialPackages.forEach(function(item) {
+  // All Material 2 components are prefixed with  @angular2-material and use
+  // the components name as entry point.
+  packages['vendor/@angular2-material/' + item] = { main: item };
+});
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
  * Everything underneath this line is managed by the CLI.
@@ -29,6 +41,7 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
+  'app/+people',
   /** @cli-barrel */
 ];
 
@@ -45,7 +58,8 @@ System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
-    'main': 'main.js'
+    'main': 'main.js',
+    '@angular2-material': 'vendor/@angular2-material'
   },
   packages: cliSystemConfigPackages
 });

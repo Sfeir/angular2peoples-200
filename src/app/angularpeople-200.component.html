@@ -1,3 +1,22 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar class="extend-toolbar">
+  <span>
+    <a [routerLink]="['/people']">
+      <img src="assets/images/logo-sfeir.svg" aria-label="sfeir" alt="Sfeir">
+    </a>
+  </span>
+
+  <span class="flex"></span>
+
+  <span>
+    <a href="https://goo.gl/forms/AXnyDmCNTB" target="_blank">Mes infos</a>
+    <a href="#/people/all">People</a>
+  </span>
+  <md-toolbar-row>
+    <label for="search-input">
+      <img src="assets/images/search-icon.svg" alt="search" with="40" height="40"/>
+      <input type="text" name="search-input" value="" />
+    </label>
+  </md-toolbar-row>
+</md-toolbar>
+
+<router-outlet></router-outlet>

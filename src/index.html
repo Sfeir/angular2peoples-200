@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Angularpeople200</title>
+  <title>Angular2 People 200</title>
   <base href="/">
 
   {{#unless environment.production}}
@@ -10,22 +10,18 @@
   {{/unless}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
 </head>
 <body>
+
   <angularpeople-200-app>Loading...</angularpeople-200-app>
 
-  
-
-    {{#each scripts.polyfills}}<script src="{{.}}"></script>{{/each}}
-    <script>
-      System.import('system-config.js').then(function () {
-        System.import('main');
-      }).catch(console.error.bind(console));
-    </script>
-
-  
-
-
+  {{#each scripts.polyfills}}<script src="{{.}}"></script>{{/each}}
+  <script>
+    System.import('system-config.js').then(function () {
+      System.import('main');
+    }).catch(console.error.bind(console));
+  </script>
 
 </body>
 </html>
