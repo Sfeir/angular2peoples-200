@@ -1,8 +1,3 @@
-body {
-  padding: 0;
-  margin: 0;
-}
-
 md-toolbar.extend-toolbar {
   background-color: #0168AB;
   background-image: url('/assets/images/bg_right.png');
@@ -46,6 +41,8 @@ md-toolbar-row:nth-child(1) {
 md-toolbar-row:nth-child(2) {
   padding-left: 30px;
   text-align: center;
+  height: 56px;
+  margin-top: 56px;
 }
 
 md-toolbar label {

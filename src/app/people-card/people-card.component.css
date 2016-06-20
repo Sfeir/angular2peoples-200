@@ -1,0 +1,59 @@
+md-card,
+md-list-item {
+  color: rgba(0,0,0,0.87);
+  background-color: white;
+}
+
+md-list-item {
+  height: 22px;
+  padding: 0;
+  margin-left: -12px;
+  font-size: 14px;
+}
+
+md-card-title {
+  margin-bottom: 0;
+}
+
+md-card-title span {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+md-card-subtitle {
+  margin-top: -18px;
+  height: 17px;
+}
+
+md-card-title-group {
+  margin-bottom: 50px;
+}
+
+.contact-info md-icon + a {
+  top: -12px;
+  position: relative;
+  height: 12px;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+
+md-icon {
+  color: rgba(0,0,0,0.54);
+  margin: 4px;
+}
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.md-whiteframe-4dp,
+.md-whiteframe-z2 {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+              0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+              0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
