@@ -23,7 +23,7 @@
     }
   },
   "defaults": {
-    "prefix": "app",
+    "prefix": "sfeir",
     "sourceDir": "src",
     "styleExt": "css",
     "prefixInterfaces": false,
