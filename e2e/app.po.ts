@@ -1,9 +1,9 @@
-export class Angularpeople200Page {
+export class Angular2people200Page {
   navigateTo() {
     return browser.get('/');
   }
 
   getParagraphText() {
-    return element(by.css('angularpeople-200-app h1')).getText();
+    return element(by.css('app-root h1')).getText();
   }
 }
