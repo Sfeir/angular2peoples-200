@@ -1,15 +1,14 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { MdToolbar } from '@angular2-material/toolbar';
-import { MdInput } from '@angular2-material/input';
+import { MD_DIRECTIVES } from './app.providers';
 import { PeopleComponent } from './+people';
 
 @Component({
   moduleId: module.id,
-  selector: 'people-app',
+  selector: 'root-app',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives: [ROUTER_DIRECTIVES, MdToolbar, MdInput],
+  directives: [ROUTER_DIRECTIVES, MD_DIRECTIVES],
   encapsulation: ViewEncapsulation.None
 })
 export class PeopleAppComponent {
