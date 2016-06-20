@@ -9,6 +9,7 @@ md-toolbar.extend-toolbar {
   width: 100%;
   z-index: 1;
   color: white;
+  margin-bottom: 10px;
 }
 
 md-toolbar .flex {

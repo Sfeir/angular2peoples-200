@@ -12,4 +12,6 @@ import { PeopleComponent } from './+people';
 })
 export class PeopleAppComponent {
 
+    constructor() {}
+
 }

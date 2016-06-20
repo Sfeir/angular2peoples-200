@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { MD_DIRECTIVES } from '../app.providers';
 
@@ -10,6 +10,8 @@ import { MD_DIRECTIVES } from '../app.providers';
   directives: [MD_DIRECTIVES, ROUTER_DIRECTIVES]
 })
 export class PeopleCardComponent implements OnInit {
+
+  @Input() person: any;
 
   constructor() {}
 
