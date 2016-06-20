@@ -1,14 +1,14 @@
-import { Angularpeople200Page } from './app.po';
+import { PeoplePage } from './app.po';
 
-describe('angularpeople-200 App', function() {
-  let page: Angularpeople200Page;
+describe('app App', function() {
+  let page: PeoplePage;
 
   beforeEach(() => {
-    page = new Angularpeople200Page();
+    page = new PeoplePage();
   });
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('angularpeople-200 works!');
+    expect(page.getParagraphText()).toEqual('app works!');
   });
 });

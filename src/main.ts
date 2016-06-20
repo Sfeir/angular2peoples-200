@@ -2,7 +2,8 @@ import { bootstrap } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { MdIconRegistry } from '@angular2-material/icon/icon-registry';
-import { Angularpeople200AppComponent, environment } from './app/';
+import { PeopleAppComponent, environment } from './app/';
+import { APP_ROUTER_PROVIDERS } from './app/app.routes';
 
 if (environment.production) {
   enableProdMode();
@@ -10,7 +11,8 @@ if (environment.production) {
 
 const PROVIDERS = [
   HTTP_PROVIDERS,
+  APP_ROUTER_PROVIDERS,
   MdIconRegistry
 ];
 
-bootstrap(Angularpeople200AppComponent, PROVIDERS);
+bootstrap(PeopleAppComponent, PROVIDERS);
