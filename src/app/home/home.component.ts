@@ -12,19 +12,12 @@ import { PeopleService } from '../people.service';
 })
 export class HomeComponent implements OnInit {
 
-  private person: any;
+  private person: any = {};
 
   constructor(private ppl: PeopleService) {
-
+    this.ppl.fetchRandom().subscribe((person) => this.person = person);
   }
 
-  ngOnInit() {
-    this.ppl.fetch().subscribe(
-      (people) => {
-        console.log(people);
-        this.person = people[ Math.floor(Math.random() * people.length) ]
-      }
-    )
-  }
+  ngOnInit() {}
 
 }
