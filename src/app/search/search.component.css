@@ -1,0 +1,15 @@
+label {
+  width: 100%;
+}
+
+input {
+  color: white;
+  background-color: transparent;
+  width: 60%;
+  font-size: 44px;
+  height: 56px;
+  border: 0 none;
+  border-bottom: 1px solid white;
+  outline: none;
+  padding: 2px 4px;
+}

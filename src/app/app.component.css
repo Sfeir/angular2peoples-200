@@ -45,19 +45,3 @@ md-toolbar-row:nth-child(2) {
   height: 56px;
   margin-top: 56px;
 }
-
-md-toolbar label {
-  width: 100%;
-}
-
-md-toolbar input {
-  color: white;
-  background-color: transparent;
-  width: 60%;
-  font-size: 44px;
-  height: 56px;
-  border: 0 none;
-  border-bottom: 1px solid white;
-  outline: none;
-  padding: 2px 4px;
-}
