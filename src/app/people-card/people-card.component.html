@@ -1,37 +1,37 @@
 <md-card class="md-whiteframe-4dp">
    <md-card-title-group>
-      <img md-card-md-image src="https://storage.googleapis.com/sfeir-people/al/allienne.a_sfeir.com.jpg">
+      <img md-card-md-image src="{{ person.photo }}">
       <md-card-title>
-				<a [routerLink]="['/people/bouadma.a@sfeir.com']">
-					<span>Aurélien ALLIENNE</span>
+				<a [routerLink]="['/people/' + person.email]">
+					<span>{{ person.firstname }} {{ person.lastname }}</span>
 				</a>
 			</md-card-title>
-      <md-card-subtitle>Developpeur</md-card-subtitle>
+      <md-card-subtitle>{{ person.entity }}</md-card-subtitle>
       <md-card-subtitle class="contact-info">
         <md-icon>
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 24 24" fit="" preserveAspectRatio="xMidYMid meet" style="pointer-events: none; display: block;"><path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"></path></svg>
         </md-icon>
-        <a href="mailto:Aurélien Allienne&lt;allienne.a@sfeir.com&gt;" title="écrire un courriel à Aurélien Allienne">allienne.a@sfeir.com</a>
+        <a href="mailto:{{ person.firstname }} {{ person.lastname }}&lt;{{ person.email }}&gt;" title="écrire un courriel à {{ person.firstname }} {{ person.lastname }}">{{ person.email }}</a>
       </md-card-subtitle>
       <md-card-subtitle class="contact-info">
         <md-icon>
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 24 24" fit="" preserveAspectRatio="xMidYMid meet" style="pointer-events: none; display: block;"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"></path></svg>
         </md-icon>
-        <a href="tel:+3361361419" title="appeler Aurélien sur son mobile">+3361361419</a>
+        <a href="tel:{{ person.phone }}" title="appeler {{ person.firstname }} sur son mobile">{{ person.phone }}</a>
       </md-card-subtitle>
 
    </md-card-title-group>
 	 <md-card-content>
      <div class="contact-info">
-       Responsable/Manager&nbsp;:&nbsp;<a href="#/people/borie.l@sfeir.com">borie.l@sfeir.com</a>
+       Responsable/Manager&nbsp;:&nbsp;<a [routerLink]="['people/' + person.managerId]">{{ person.manager }}</a>
      </div>
      <div class="contact-info">
-       Localisation&nbsp;:&nbsp;<a href="http://www.sfeir.com/contact/" class="ng-binding">Sfeir-Lille</a>
+       Localisation&nbsp;:&nbsp;<a href="http://www.sfeir.com/contact/">Sfeir-Lille</a>
      </div>
 	 </md-card-content>
 
    <md-card-actions>
-     <a md-button ng-show="random.entity == 'Sfeir-Benelux'" target="_blank" title="Le localiser" href="http://sfeirmaplux.appspot.com/#sferian/allienne.a" aria-hidden="true" class="ng-hide">
+     <a md-button target="_blank" title="Le localiser" href="http://sfeirmaplux.appspot.com/#sferian/{{ person.id }}" aria-hidden="true">
        <md-icon aria-hidden="true">
          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 374.003 374.003" style="pointer-events: none; display: block;" xml:space="preserve" fit="" preserveAspectRatio="xMidYMid meet">
            <g>
@@ -59,7 +59,7 @@
         </md-icon>
      </a>
 
-     <a md-button ng-show="random.entity == 'Sfeir-Paris'" target="_blank" title="Le localiser" href="http://map.sfeir.com/#sferian/allienne.a" aria-hidden="true" class="ng-hide">
+     <a md-button target="_blank" title="Le localiser" href="http://map.sfeir.com/#sferian/{{ person.id }}" aria-hidden="true">
        <md-icon aria-hidden="true">
          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 374.003 374.003" style="pointer-events: none; display: block;" xml:space="preserve" fit="" preserveAspectRatio="xMidYMid meet">
            <g>
