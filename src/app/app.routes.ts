@@ -3,9 +3,9 @@ import { PeopleComponent } from './+people/';
 import { HomeComponent } from './home/';
 
 export const routes: RouterConfig = [
-  {path: '', redirectTo: 'people'},
-  {path: 'people', component: HomeComponent},
-  {path: 'people/:email', component: PeopleComponent}
+  {path: '', redirectTo: 'home'},
+  {path: 'home', component: HomeComponent},
+  {path: 'people', component: PeopleComponent}
 ];
 
 export const APP_ROUTER_PROVIDERS = [
