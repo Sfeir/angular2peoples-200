@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PeopleCardComponent } from '../people-card/';
-import { PeopleService } from '../people.service';
+import { PeopleService } from '../shared/';
 
 @Component({
   moduleId: module.id,
@@ -16,12 +16,10 @@ export class HomeComponent implements OnInit {
 
   @Input() input;
 
-  constructor(private ppl: PeopleService) {
-    this.ppl.fetchRandom().subscribe((person) => this.person = person);
-  }
+  constructor(private ppl: PeopleService) {}
 
   ngOnInit() {
-    console.log(this.input);
+    this.ppl.fetchRandom().subscribe((person) => this.person = person);
   }
 
 }

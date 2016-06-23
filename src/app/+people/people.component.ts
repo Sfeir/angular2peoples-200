@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PeopleCardComponent } from '../people-card/';
-import { PeopleService } from '../people.service';
+import { PeopleService } from '../shared/';
 import { SearchComponent } from '../search/';
-import { FilterPipe } from '../filter.pipe';
+import { FilterPipe } from '../shared/';
 
 @Component({
   moduleId: module.id,
@@ -16,7 +16,7 @@ import { FilterPipe } from '../filter.pipe';
 export class PeopleComponent implements OnInit {
 
   private people: any = [];
-  private byPersonName: string = '';
+  private query: string = '';
 
   constructor(private ppl: PeopleService) {}
 
@@ -25,7 +25,7 @@ export class PeopleComponent implements OnInit {
   }
 
   onSearch(value) {
-    this.byPersonName = value;
+    this.query = value;
   }
 
 }

@@ -10,8 +10,4 @@ import { PeopleComponent } from './+people/';
   styleUrls: ['app.component.css'],
   directives: [ROUTER_DIRECTIVES, MD_DIRECTIVES]
 })
-export class PeopleAppComponent {
-
-  constructor() {}
-
-}
+export class PeopleAppComponent {}
