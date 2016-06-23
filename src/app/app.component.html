@@ -1,6 +1,6 @@
 <md-toolbar class="extend-toolbar">
   <span>
-    <a [routerLink]="['people']">
+    <a [routerLink]="['home']">
       <img src="assets/images/logo-sfeir.svg" aria-label="sfeir" alt="Sfeir">
     </a>
   </span>
@@ -8,13 +8,8 @@
   <span class="flex"></span>
 
   <span>
-    <a href="https://goo.gl/forms/AXnyDmCNTB" target="_blank">Mes infos</a>
-    <a href="#/people/all">People</a>
+    <a [routerLink]="['people']">People</a>
   </span>
-  <md-toolbar-row>
-    <!--  search placeholder -->
-    <sfeir-search></sfeir-search>
-  </md-toolbar-row>
 </md-toolbar>
 
-<router-outlet></router-outlet>
+<router-outlet [input]="dddd"></router-outlet>

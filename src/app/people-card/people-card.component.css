@@ -2,6 +2,8 @@ md-card,
 md-list-item {
   color: rgba(0,0,0,0.87);
   background-color: white;
+  margin: 30px auto;
+  width: 400px;
 }
 
 md-list-item {
@@ -27,7 +29,7 @@ md-card-subtitle {
 }
 
 md-card-title-group {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .contact-info md-icon + a {
