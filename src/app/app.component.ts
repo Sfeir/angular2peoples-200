@@ -5,7 +5,7 @@ import { PeopleComponent } from './+people/';
 
 @Component({
   moduleId: module.id,
-  selector: 'root-app',
+  selector: 'sfeir-app',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
   directives: [ROUTER_DIRECTIVES, MD_DIRECTIVES]

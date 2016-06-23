@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -8,12 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  private search: string;
+  @Output('onSearch') event$: EventEmitter<string>;
+  private token: string;
 
-  constructor() {}
+  constructor() {
+    this.event$ = new EventEmitter<string>();
+  }
 
   ngOnInit() {}
 
-  onSearch(value) {}
+  search() {
+    this.event$.emit(this.token);
+  }
 
 }

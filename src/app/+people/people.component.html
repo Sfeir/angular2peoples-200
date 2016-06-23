@@ -1,2 +1,2 @@
-<sfeir-search [people]="people"></sfeir-search>
-<people-card *ngFor="let person of people" [person]="person"></people-card>
+<sfeir-search (onSearch)="onSearch($event)"></sfeir-search>
+<sfeir-people-card *ngFor="let person of people | filter:byPersonName" [person]="person"></sfeir-people-card>

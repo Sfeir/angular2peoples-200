@@ -6,20 +6,26 @@ import { FilterPipe } from '../filter.pipe';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-people',
+  selector: 'sfeir-people',
   templateUrl: 'people.component.html',
   styleUrls: ['people.component.css'],
   directives: [PeopleCardComponent, SearchComponent],
-  providers: [PeopleService]
+  providers: [PeopleService],
+  pipes: [FilterPipe]
 })
 export class PeopleComponent implements OnInit {
 
   private people: any = [];
+  private byPersonName: string = '';
 
   constructor(private ppl: PeopleService) {}
 
   ngOnInit() {
     this.ppl.fetch().subscribe((people) => this.people = people);
+  }
+
+  onSearch(value) {
+    this.byPersonName = value;
   }
 
 }

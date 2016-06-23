@@ -4,7 +4,7 @@ import { MD_DIRECTIVES } from '../app.providers';
 
 @Component({
   moduleId: module.id,
-  selector: 'people-card',
+  selector: 'sfeir-people-card',
   templateUrl: 'people-card.component.html',
   styleUrls: ['people-card.component.css'],
   directives: [MD_DIRECTIVES, ROUTER_DIRECTIVES]

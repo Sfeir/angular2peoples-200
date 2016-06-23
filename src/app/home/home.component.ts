@@ -4,7 +4,7 @@ import { PeopleService } from '../people.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-home',
+  selector: 'sfeir-app-home',
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.css'],
   directives: [PeopleCardComponent],
