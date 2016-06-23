@@ -42,6 +42,10 @@ md-card-title-group {
   text-decoration: underline;
 }
 
+.map-info {
+  float: right;
+  margin-top: -50px;
+}
 
 md-icon {
   color: rgba(0,0,0,0.54);
@@ -51,6 +55,15 @@ md-icon {
 a {
   color: #337ab7;
   text-decoration: none;
+}
+
+md-card-actions button[md-raised-button] {
+  margin: 5px;
+}
+
+.skills {
+  padding: 10px;
+  background-color: #FAFAFA;
 }
 
 .md-whiteframe-4dp,

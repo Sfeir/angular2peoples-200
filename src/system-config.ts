@@ -45,6 +45,7 @@ const barrels: string[] = [
   'app/people-card',
   'app/home',
   'app/search',
+  'app/+person',
   /** @cli-barrel */
 ];
 
