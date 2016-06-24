@@ -12,9 +12,4 @@ import {
 
 import { PersonComponent } from './person.component';
 
-describe('Component: Person', () => {
-  it('should create an instance', () => {
-    let component = new PersonComponent();
-    expect(component).toBeTruthy();
-  });
-});
+describe('Component: Person', () => {});

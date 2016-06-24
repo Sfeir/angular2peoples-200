@@ -23,7 +23,6 @@ export class PersonComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log(this.route.params)
     this.route.params
       .map((params: any) => params.id)
       .flatMap(id => this.ppl.fetchOne(id))
@@ -31,7 +30,7 @@ export class PersonComponent implements OnInit {
   }
 
   navigateToSkill(skill) {
-    this.router.navigate(['skills', skill]);
+    this.router.navigateByUrl(`/skills/${skill}`);
   }
 
 }
