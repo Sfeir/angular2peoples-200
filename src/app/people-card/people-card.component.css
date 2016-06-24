@@ -61,6 +61,11 @@ md-card-actions button[md-raised-button] {
   margin: 5px;
 }
 
+.hl {
+  background-color: orange;
+  color: white;
+}
+
 .skills {
   padding: 10px;
   background-color: #FAFAFA;

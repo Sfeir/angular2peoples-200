@@ -12,11 +12,15 @@ import { MD_DIRECTIVES } from '../app.providers';
 export class PeopleCardComponent {
 
   @Input('expand') isExpanded: boolean = false;
-  @Input() person: any;
+  @Input('skill') selectedSkill: string;
   @Output('onSkillSelected') filterBySkill$: EventEmitter<string>;
+  @Input() person: any;
 
   constructor() {
     this.filterBySkill$ = new EventEmitter<string>();
+  }
+
+  ngOnInit() {
   }
 
   searchBySkill(skill) {
