@@ -1,0 +1,14 @@
+<h1>Localisation de {{ person.firstname }} {{ person.lastname }}</h1>
+<sfeir-maps
+  [lat]="person.geo.lat"
+  [lng]="person.geo.lng"
+>
+
+  <sfeir-maps-marker
+    [lat]="person.geo.lat"
+    [lng]="person.geo.lng"
+    [photo]="person.photo"
+    [title]="person.firstname+' '+person.lastname"
+  ></sfeir-maps-marker>
+
+</sfeir-maps>

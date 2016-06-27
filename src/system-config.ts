@@ -45,14 +45,14 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
-  'app/+people',
   'app/people-card',
   'app/home',
+  'app/maps',
   'app/search',
+  'app/+people',
   'app/+person',
   'app/+skills',
-  'app/+maps',
-  'app/skills',
+  'app/+locator',
   /** @cli-barrel */
 ];
 

@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
   templateUrl: 'person.component.html',
   styleUrls: ['person.component.css'],
   directives: [PeopleCardComponent],
-  providers: [PeopleService],
+  providers: [PeopleService]
 })
 export class PersonComponent implements OnInit {
 
