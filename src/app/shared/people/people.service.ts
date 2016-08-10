@@ -28,4 +28,14 @@ export class PeopleService {
     return this.http.get(`${BASE_URL}/api/peoples/skill/${skill}`)
       .map( res => res.json() );
   }
+
+  delete(id) {
+    return this.http.delete(`${BASE_URL}/api/peoples/${id}`)
+      .map( res => res.json() );
+  }
+
+  update(person) {
+    return this.http.put(`${BASE_URL}/api/peoples/${person.id}`, person)
+      .map( res => res.json() );
+  }
 }

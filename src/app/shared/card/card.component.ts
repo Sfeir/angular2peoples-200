@@ -14,10 +14,12 @@ export class CardComponent {
   @Input('expand') isExpanded: boolean = false;
   @Input('skill') selectedSkill: string;
   @Output('onSkillSelected') filterBySkill$: EventEmitter<string>;
+  @Output('onDelete') delete$: EventEmitter<any>;
   @Input() person: any;
 
   constructor() {
     this.filterBySkill$ = new EventEmitter<string>();
+    this.delete$ = new EventEmitter<string>();
   }
 
   ngOnInit() {
@@ -25,6 +27,10 @@ export class CardComponent {
 
   searchBySkill(skill) {
     this.filterBySkill$.emit(skill);
+  }
+
+  delete(user) {
+    this.delete$.emit(user);
   }
 
 }

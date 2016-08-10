@@ -8,5 +8,6 @@
   <sfeir-card
     *ngFor="let person of filteredPeople"
     [person]="person"
+    (onDelete)="onDelete($event)"
   ></sfeir-card>
 </section>

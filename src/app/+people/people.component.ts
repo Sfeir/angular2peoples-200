@@ -29,10 +29,10 @@ export class PeopleComponent implements OnInit {
     'other': 'Found # people'
   };
 
-  constructor(private ppl: PeopleService) {}
+  constructor(private _service: PeopleService) {}
 
   ngOnInit() {
-    this.ppl.fetch().subscribe((people) => {
+    this._service.fetch().subscribe((people) => {
       this.people = people;
       this.filteredPeople = people;
     });
@@ -43,6 +43,14 @@ export class PeopleComponent implements OnInit {
       return person.firstname.toLowerCase().startsWith(value)
         || person.lastname.toLowerCase().startsWith(value);
       });
+  }
+
+  onDelete(person) {
+    this._service.delete(person.id).subscribe((people) => {
+        this.people = people;
+        this.filteredPeople = people;
+      }
+    );
   }
 
 }

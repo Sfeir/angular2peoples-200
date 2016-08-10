@@ -43,8 +43,8 @@
 
 
   <md-card-actions align="end">
-    <button md-button [disabled]="false" color="primary" type="submit">Save</button>
-    <button md-button type="button">Cancel</button>
+    <button md-button [disabled]="false" color="primary" type="submit" (click)="submit()">Save</button>
+    <a [routerLink]="['/people']" md-button type="button">Cancel</a>
   </md-card-actions>
 
 </md-card>
