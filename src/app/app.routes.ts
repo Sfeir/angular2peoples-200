@@ -6,7 +6,7 @@ import { LocatorComponent } from './+locator/';
 import { UpdateComponent } from './+update/';
 import { HomeComponent } from './+home/';
 
-export const routes: RouterConfig = [
+export const ROUTES: RouterConfig = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'people', component: PeopleComponent},
@@ -15,8 +15,4 @@ export const routes: RouterConfig = [
   {path: 'locator', component: LocatorComponent},
   {path: 'locator/:id', component: LocatorComponent},
   {path: 'edit/:id', component: UpdateComponent}
-];
-
-export const APP_ROUTER_PROVIDERS = [
-  provideRouter(routes)
 ];

@@ -1,11 +1,1 @@
-<div>
-  <div #map class="maps"></div>
-  <div>
-    <sfeir-maps-infowindow
-      *ngFor="let _person of people"
-      [person]="_person"
-      [hidden]="_person.id != selectedPerson.id"
-      (onTitleClick)="openPersonPage($event)"
-    ></sfeir-maps-infowindow>
-  </div>
-</div>
+<div #map class="maps"></div>

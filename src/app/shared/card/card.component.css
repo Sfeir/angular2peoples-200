@@ -36,9 +36,9 @@ md-card-title span {
   line-height: 32px;
 }
 
-md-card-subtitle {
-  margin-top: -18px;
-  height: 17px;
+md-card-subtitle.contact-info {
+  margin-top: -7px;
+  height: 20px;
 }
 
 md-card-title-group {

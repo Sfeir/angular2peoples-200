@@ -1,13 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { MD_DIRECTIVES } from '../../app.providers';
 
 @Component({
   moduleId: module.id,
   selector: 'sfeir-form',
   templateUrl: 'form.component.html',
-  styleUrls: ['form.component.css'],
-  directives: [MD_DIRECTIVES, ROUTER_DIRECTIVES]
+  styleUrls: ['form.component.css']
 })
 export class FormComponent implements OnInit {
 

@@ -9,11 +9,11 @@
       <md-card-subtitle>{{ person.entity }}</md-card-subtitle>
       <md-card-subtitle class="contact-info">
         <md-icon svgSrc="images/icon-mail.svg"></md-icon>
-        <a href="mailto:{{ person.firstname }} {{ person.lastname }}&lt;{{ person.email }}&gt;" title="écrire un courriel à {{ person.firstname }} {{ person.lastname }}" class="truncate">{{ person.email }}</a>
+        <a href="mailto:{{ person.firstname }} {{ person.lastname }}&lt;{{ person.email }}&gt;" title="Send an email to {{ person.firstname }} {{ person.lastname }}" class="truncate">{{ person.email }}</a>
       </md-card-subtitle>
       <md-card-subtitle class="contact-info">
         <md-icon svgSrc="images/icon-phone.svg"></md-icon>
-        <a href="tel:{{ person.phone }}" title="appeler {{ person.firstname }} sur son mobile">{{ person.phone }}</a>
+        <a href="tel:{{ person.phone }}" title="Call {{ person.firstname }}">{{ person.phone }}</a>
       </md-card-subtitle>
 
    </md-card-title-group>
@@ -22,7 +22,7 @@
        Manager&nbsp;:&nbsp;<a [routerLink]="['/people', person.managerId || '']">{{ person.manager }}</a>
      </div>
      <div class="contact-info">
-       Location&nbsp;:&nbsp;<a href="http://www.sfeir.com/contact/">Sfeir-Lille</a>
+       Location&nbsp;:&nbsp;<a href="http://www.sfeir.com/contact/">SFEIR</a>
      </div>
      <div class="buttons-info">
        <a md-button title="Locate" [routerLink]="['/locator', person.id || '']">

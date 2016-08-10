@@ -10,14 +10,15 @@ section {
 }
 
 .dialog-modal {
-  position: absolute;
   top: 0;
-  opacity: 0;
+  position: absolute;
   background: rgba(0,0,0,0.5);
   height: 100%;
   width: 100%;
-  will-change: opacity;
+  display: flex;
+  flex-basis: auto;
+  visibility: hidden;
 }
 .dialog-modal.active {
-  opacity: 1;
+  visibility: visible;
 }

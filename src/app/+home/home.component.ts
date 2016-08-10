@@ -5,9 +5,7 @@ import { PeopleService, CardComponent } from '../shared/';
   moduleId: module.id,
   selector: 'sfeir-app-home',
   templateUrl: 'home.component.html',
-  styleUrls: ['home.component.css'],
-  directives: [CardComponent],
-  providers: [PeopleService]
+  styleUrls: ['home.component.css']
 })
 export class HomeComponent implements OnInit {
 
