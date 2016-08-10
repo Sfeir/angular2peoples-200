@@ -63,7 +63,7 @@ export class PeopleComponent implements OnInit {
   }
 
   onAdd() {
-
+    this.hideDialog();
   }
 
 }

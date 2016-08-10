@@ -32,7 +32,7 @@ md-toolbar a:not(.active):hover {
 
 md-toolbar a img {
   height: 100%;
-  margin-left: -50px;
+  margin-left: -60px;
 }
 
 md-toolbar-row:nth-child(1) {

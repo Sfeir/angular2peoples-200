@@ -19,7 +19,9 @@
    </md-card-title-group>
 	 <md-card-content>
      <div class="contact-info">
-       Manager&nbsp;:&nbsp;<a [routerLink]="['/people', person.managerId || '']">{{ person.manager }}</a>
+       Manager&nbsp;:&nbsp;
+      <a *ngIf="person.managerId" [routerLink]="['/people', person.managerId || '']">{{ person.manager }}</a>
+      <span *ngIf="!person.managerId">N/A</span>
      </div>
      <div class="contact-info">
        Location&nbsp;:&nbsp;<a href="http://www.sfeir.com/contact/">SFEIR</a>

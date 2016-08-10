@@ -1,7 +1,8 @@
 <md-card class="md-whiteframe-2dp">
 
-  <md-card-title>
-    {{ isUpdateMode ? 'Update' : 'Create' }}
+  <md-card-title [ngSwitch]="isUpdateMode">
+    <span *ngSwitchCase="true" >Update {{ model?.firstname }} {{ model?.lastname }}</span>
+    <span *ngSwitchDefault>Create new person</span>
   </md-card-title>
 
   <md-card-content>
