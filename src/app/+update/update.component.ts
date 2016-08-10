@@ -29,7 +29,7 @@ export class UpdateComponent implements OnInit {
 
   submit(person) {
     this._service.update(person).subscribe(
-      res => console.log(person.id, 'has been updated')
+      res => this._router.navigate(['/people'])
     );
   }
 

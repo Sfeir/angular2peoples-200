@@ -2,8 +2,8 @@
 import { NgModule } from '@angular/core';
 import { enableProdMode } from '@angular/core';
 import { HTTP_PROVIDERS } from '@angular/http';
-import { RouterModule, Routes, ROUTER_DIRECTIVES } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 // MATERIAL DESIGN MODULES
@@ -38,13 +38,13 @@ import { UpdateComponent } from './+update/';
 import { PeopleService } from './shared/';
 
 const appRoutingProviders: any[] = [];
-const routing = RouterModule.forRoot(ROUTES, {useHash: true});
+const Routing = RouterModule.forRoot(ROUTES, {useHash: true});
 
 @NgModule({
   imports: [
     BrowserModule,
-    routing,
-    FormsModule,
+    Routing,
+    ReactiveFormsModule,
     ...MD_MODULES
   ],
   declarations: [
@@ -54,7 +54,7 @@ const routing = RouterModule.forRoot(ROUTES, {useHash: true});
     SkillsComponent,
     LocatorComponent,
     UpdateComponent,
-    PeopleAppComponent
+    PeopleAppComponent,
   ],
   providers: [ appRoutingProviders, PeopleService ],
   bootstrap: [ PeopleAppComponent ]
