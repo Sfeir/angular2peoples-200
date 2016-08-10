@@ -49,7 +49,7 @@ const barrels: string[] = [
   'app/shared/form',
   'app/shared/card',
   'app/shared/search',
-  'app/shared/people',
+  'app/shared/people-service',
   'app/shared/maps',
   'app/+home',
   'app/+people',
