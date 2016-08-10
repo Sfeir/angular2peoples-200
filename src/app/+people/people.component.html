@@ -1,2 +1,12 @@
 <sfeir-search (onSearch)="onSearch($event)"></sfeir-search>
-<sfeir-people-card *ngFor="let person of people | filter:query" [person]="person"></sfeir-people-card>
+
+<h1 i18n >
+  <span>{{ filteredPeople.length | i18nPlural: messageMapping}}</span>
+</h1>
+
+<section>
+  <sfeir-card
+    *ngFor="let person of filteredPeople"
+    [person]="person"
+  ></sfeir-card>
+</section>

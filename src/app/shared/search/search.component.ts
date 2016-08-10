@@ -9,14 +9,17 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class SearchComponent {
 
   @Output('onSearch') event$: EventEmitter<string>;
-  private token: string;
 
   constructor() {
     this.event$ = new EventEmitter<string>();
   }
 
-  search() {
-    this.event$.emit(this.token);
+  ngOnInit() {
+    this.event$.emit('');
+  }
+
+  search(value: string) {
+    this.event$.emit(value);
   }
 
 }

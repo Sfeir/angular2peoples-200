@@ -10,33 +10,18 @@
   {{/unless}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"> -->
-  <style media="screen">
-    body {
-      padding: 0;
-      margin: 0;
-    }
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background-color: #FAFAFA;
-      -webkit-font-smoothing: antialiased;
-    }
-    * /deep/ * {
-      font-family: inherit;
-      font-size: 14px;
-      line-height: 1.42857143;
-      color: inherit;
-    }
-    h1, * /deep/ h1 {
-      font-size: 36px;
-      margin-top: 20px;
-      margin-bottom: 10px;
-    }
-  </style>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe9bBTvKzxhdd6TXoDfzIxuZFKI3fx9Hc" async defer></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <sfeir-app>Loading...</sfeir-app>
+  <sfeir-app>
+    <div class="loader">
+      <svg class="circular">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+      </svg>
+    </div>
+  </sfeir-app>
 
   {{#each scripts.polyfills}}
   <script src="{{.}}"></script>
@@ -47,8 +32,6 @@
     }).catch(console.error.bind(console));
   </script>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe9bBTvKzxhdd6TXoDfzIxuZFKI3fx9Hc"
-    async defer></script>
 
 </body>
 </html>

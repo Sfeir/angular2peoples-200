@@ -3,18 +3,18 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   moduleId: module.id,
-  selector: 'sfeir-maps-marker',
-  host: {
-    '(click)':'clickTitle($event)'
-  },
+  selector: 'sfeir-maps-infowindow',
   template: `
-  <div (click)="clickTitle($event)" onclick="clickTitle()">
-    <img width="80" height="80" src="{{ photo }}" />
+  <div (click)="clickTitle($event)">
+    <img width="80" height="80" src="{{ person.photo }}" />
     <h3>
-      <span>{{ title }}</span>
+      <span>{{ person.firstname }} {{ person.lastname }}</span>
     </h3>
   </div>
   `,
+  host: {
+    '[hidden]': 'visibilityStatus'
+  },
   styles: [`
     div {
       text-align: center;
@@ -22,12 +22,6 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
     }
     h3 {
       margin: 2px;
-    }
-    h3 span {
-      color: #0168AB;
-      font-weight: bold;
-      cursor: pointer;
-      text-decoration: underline;
     }
     img {
       border-radius: 50%;
@@ -37,17 +31,20 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 })
 export class MapsInfoWindowComponent {
 
-  @Input() lat: number;
-  @Input() lng: number;
-  @Input() title: number;
-  @Input() photo: string;
-
+  @Input() person: any;
   @Output('onTitleClick') ee$: EventEmitter<any>;
+
+  private visibilityStatus: string = 'none';
 
   constructor(
     private zone: NgZone
   ) {
     this.ee$ = new EventEmitter<any>();
+  }
+
+  setVisibility(state: boolean) {
+    console.log(this, state);
+    this.visibilityStatus = state ? 'block':'none';
   }
 
   clickTitle(event) {

@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PeopleCardComponent } from '../people-card/';
-import { PeopleService } from '../shared/';
+import { PeopleService, CardComponent } from '../shared/';
 
 @Component({
   moduleId: module.id,
   selector: 'sfeir-skills',
   templateUrl: 'skills.component.html',
   styleUrls: ['skills.component.css'],
-  directives: [PeopleCardComponent],
+  directives: [CardComponent],
   providers: [PeopleService]
 })
 export class SkillsComponent implements OnInit {

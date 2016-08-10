@@ -1,14 +1,6 @@
-<h1>Localisation de {{ person.firstname }} {{ person.lastname }}</h1>
-<sfeir-maps
-  [lat]="person.geo.lat"
-  [lng]="person.geo.lng"
->
+<h1 [ngSwitch]="people.length" >
+  <span *ngSwitchCase="1">Locating {{ people[0].firstname }} {{ people[0].lastname }}</span>
+  <span *ngSwitchDefault>Locating {{people.length}} people</span>
+</h1>
 
-  <sfeir-maps-marker
-    [lat]="person.geo.lat"
-    [lng]="person.geo.lng"
-    [photo]="person.photo"
-    [title]="person.firstname+' '+person.lastname"
-  ></sfeir-maps-marker>
-
-</sfeir-maps>
+<sfeir-maps [people]="people" ></sfeir-maps>

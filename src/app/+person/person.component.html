@@ -1,5 +1,10 @@
-<sfeir-people-card
-  [person]="person"
-  [expand]="true"
-  (onSkillSelected)="navigateToSkill($event)">
-</sfeir-people-card>
+<h1><span>Fiche personnelle</span></h1>
+
+<section>
+  <sfeir-card
+    class="wide"
+    [person]="person"
+    [expand]="true"
+    (onSkillSelected)="navigateToSkill($event)">
+  </sfeir-card>
+</section>

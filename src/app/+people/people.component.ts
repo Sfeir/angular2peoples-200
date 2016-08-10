@@ -1,31 +1,48 @@
 import { Component, OnInit } from '@angular/core';
-import { PeopleCardComponent } from '../people-card/';
-import { PeopleService } from '../shared/';
-import { SearchComponent } from '../search/';
-import { FilterPipe } from '../shared/';
+import { NgLocalization } from '@angular/common';
+import {
+  CardComponent,
+  SearchComponent,
+  PeopleService,
+  CustomLocalization
+} from '../shared/';
 
 @Component({
   moduleId: module.id,
   selector: 'sfeir-people',
   templateUrl: 'people.component.html',
   styleUrls: ['people.component.css'],
-  directives: [PeopleCardComponent, SearchComponent],
-  providers: [PeopleService],
-  pipes: [FilterPipe]
+  directives: [CardComponent, SearchComponent],
+  providers: [
+    PeopleService,
+    {provide: NgLocalization, useClass: CustomLocalization}
+  ]
 })
 export class PeopleComponent implements OnInit {
 
   private people: any = [];
+  private filteredPeople: any = [];
   private query: string = '';
+  private messageMapping: {[k:string]: string} = {
+    '=0': 'No person found',
+    '=1': 'Found one person',
+    'other': 'Found # people'
+  };
 
   constructor(private ppl: PeopleService) {}
 
   ngOnInit() {
-    this.ppl.fetch().subscribe((people) => this.people = people);
+    this.ppl.fetch().subscribe((people) => {
+      this.people = people;
+      this.filteredPeople = people;
+    });
   }
 
   onSearch(value) {
-    this.query = value;
+    this.filteredPeople = this.people.filter( (person) => {
+      return person.firstname.toLowerCase().startsWith(value)
+        || person.lastname.toLowerCase().startsWith(value);
+      });
   }
 
 }

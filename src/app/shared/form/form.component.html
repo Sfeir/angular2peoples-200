@@ -1,0 +1,50 @@
+<md-card class="md-whiteframe-2dp">
+
+  <md-card-title>
+    Update form
+  </md-card-title>
+
+  <md-card-content>
+    <form novalidate>
+
+      <p>
+        <md-input style="width:100%" placeholder="ID (disabled)" disabled  name="id" [value]="model?.id"></md-input>
+      </p>
+
+      <table style="width: 100%" cellspacing="0">
+        <tr>
+          <td>
+            <md-input placeholder="First name" name="firstname" [value]="model?.firstname"></md-input>
+            <md-input placeholder="Last Name" name="lastname" [value]="model?.lastname"></md-input>
+          </td>
+          <td class="align-right"><img src="{{ model?.photo }}"/></td>
+        </tr>
+      </table>
+
+      <p>
+        <md-input placeholder="Address" style="width:100%" name="street" [value]="model?.address?.street"></md-input>
+      </p>
+
+      <p  ngModelGroup="address">
+        <md-input placeholder="City" name="city" [value]="model?.address?.city"></md-input>
+        <md-input placeholder="Postal Code" name="postalCode" [value]="model?.address?.postalCode"></md-input>
+      </p>
+
+      <p>
+        <md-input placeholder="Phone" style="width:100%" name="phone" [value]="model?.phone"></md-input>
+      </p>
+
+      <p>
+        <md-checkbox [checked]="false">Manager</md-checkbox>
+      </p>
+
+    </form>
+  </md-card-content>
+
+
+  <md-card-actions align="end">
+    <button md-button [disabled]="false" color="primary" type="submit">Save</button>
+    <button md-button type="button">Cancel</button>
+  </md-card-actions>
+
+</md-card>

@@ -1,7 +1,0 @@
-h1 {
-  text-align: center;
-}
-people-card, people-card /deep/ md-card {
-  margin: auto;
-  width: 500px;
-}

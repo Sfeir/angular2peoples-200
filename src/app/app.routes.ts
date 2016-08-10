@@ -3,15 +3,18 @@ import { PeopleComponent } from './+people/';
 import { PersonComponent } from './+person/';
 import { SkillsComponent } from './+skills/';
 import { LocatorComponent } from './+locator/';
-import { HomeComponent } from './home/';
+import { UpdateComponent } from './+update/';
+import { HomeComponent } from './+home/';
 
 export const routes: RouterConfig = [
-  {path: '', redirectTo: 'home'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'people', component: PeopleComponent},
   {path: 'people/:id', component: PersonComponent},
   {path: 'skills/:skill', component: SkillsComponent},
-  {path: 'locator/:id', component: LocatorComponent}
+  {path: 'locator', component: LocatorComponent},
+  {path: 'locator/:id', component: LocatorComponent},
+  {path: 'edit/:id', component: UpdateComponent}
 ];
 
 export const APP_ROUTER_PROVIDERS = [

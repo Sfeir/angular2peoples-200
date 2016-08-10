@@ -1,5 +1,10 @@
+input,
 label {
-  width: 600px;
+  max-width: 500px;
+  width: 95%;
+}
+
+label {
   margin: auto;
   display: block;
 }
@@ -7,8 +12,7 @@ label {
 input {
   color: #0168AB;
   background-color: transparent;
-  width: 500px;
-  font-size: 44px;
+  font-size: 20px;
   height: 56px;
   border: 0 none;
   border-bottom: 1px solid #0168AB;

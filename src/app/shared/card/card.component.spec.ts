@@ -10,11 +10,11 @@ import {
   async, inject
 } from '@angular/core/testing';
 
-import { PeopleCardComponent } from './people-card.component';
+import { CardComponent } from './card.component';
 
 describe('Component: PeopleCard', () => {
   it('should create an instance', () => {
-    let component = new PeopleCardComponent();
+    let component = new CardComponent();
     expect(component).toBeTruthy();
   });
 });

@@ -1,13 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PeopleCardComponent } from '../people-card/';
-import { PeopleService } from '../shared/';
+import { PeopleService, CardComponent } from '../shared/';
 
 @Component({
   moduleId: module.id,
   selector: 'sfeir-app-home',
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.css'],
-  directives: [PeopleCardComponent],
+  directives: [CardComponent],
   providers: [PeopleService]
 })
 export class HomeComponent implements OnInit {
