@@ -1,13 +1,13 @@
 <md-card class="md-whiteframe-2dp">
 
   <md-card-title>
-    Update form
+    {{ isUpdateMode ? 'Update' : 'Create' }}
   </md-card-title>
 
   <md-card-content>
     <form novalidate>
 
-      <p>
+      <p *ngIf="isUpdateMode">
         <md-input style="width:100%" placeholder="ID (disabled)" disabled  name="id" [value]="model?.id"></md-input>
       </p>
 
@@ -17,7 +17,7 @@
             <md-input placeholder="First name" name="firstname" [value]="model?.firstname"></md-input>
             <md-input placeholder="Last Name" name="lastname" [value]="model?.lastname"></md-input>
           </td>
-          <td class="align-right"><img src="{{ model?.photo }}"/></td>
+          <td class="align-right"><img width="100" src="{{ model?.photo || 'https://randomuser.me/api/portraits/lego/6.jpg' }}"/></td>
         </tr>
       </table>
 
@@ -44,7 +44,7 @@
 
   <md-card-actions align="end">
     <button md-button [disabled]="false" color="primary" type="submit" (click)="submit()">Save</button>
-    <a [routerLink]="['/people']" md-button type="button">Cancel</a>
+    <button md-button (click)="cancel()" type="button">Cancel</button>
   </md-card-actions>
 
 </md-card>

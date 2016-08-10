@@ -18,6 +18,17 @@ h1, * /deep/ h1 {
   margin-bottom: 10px;
 }
 
+button[md-fab], a[md-fab] {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+[md-fab] md-icon {
+  font-size: 2em;
+  line-height: 18.6px;
+}
+
 .loader {
   position: relative;
   margin: 0 auto;

@@ -11,3 +11,11 @@
     (onDelete)="onDelete($event)"
   ></sfeir-card>
 </section>
+
+<section class="dialog-modal" [ngClass]="{ 'active': dialogStatus == 'active' }">
+  <sfeir-form class="wide" (onSubmit)="onAdd($event)" (onCancel)="hideDialog()"></sfeir-form>
+</section>
+
+<button (click)="showDialog()" *ngIf="dialogStatus == 'inactive'" md-fab color="accent">
+  <md-icon class="md-24">+</md-icon>
+</button>

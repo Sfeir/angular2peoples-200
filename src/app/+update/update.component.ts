@@ -16,6 +16,7 @@ export class UpdateComponent implements OnInit {
 
   constructor(
     private _route: ActivatedRoute,
+    private _router: Router,
     private _service: PeopleService
   ) { }
 
@@ -30,6 +31,10 @@ export class UpdateComponent implements OnInit {
     this._service.update(person).subscribe(
       res => console.log(person.id, 'has been updated')
     );
+  }
+
+  cancel() {
+    this._router.navigate(['/people']);
   }
 
 }

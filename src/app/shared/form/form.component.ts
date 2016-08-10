@@ -11,18 +11,26 @@ import { MD_DIRECTIVES } from '../../app.providers';
 })
 export class FormComponent implements OnInit {
 
+  private isUpdateMode: boolean;
   @Input() model: any = {};
   @Output('onSubmit') submit$: EventEmitter<any>;
+  @Output('onCancel') cancel$: EventEmitter<any>;
 
   constructor() {
     this.submit$ = new EventEmitter<any>();
+    this.cancel$ = new EventEmitter<any>();
   }
 
   ngOnInit() {
+    this.isUpdateMode = !this.model;
   }
 
   submit() {
     this.submit$.emit(this.model);
+  }
+
+  cancel() {
+    this.cancel$.emit(this.model);
   }
 
 }

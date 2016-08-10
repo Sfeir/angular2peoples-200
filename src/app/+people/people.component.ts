@@ -4,7 +4,8 @@ import {
   CardComponent,
   SearchComponent,
   PeopleService,
-  CustomLocalization
+  CustomLocalization,
+  FormComponent
 } from '../shared/';
 
 @Component({
@@ -12,7 +13,7 @@ import {
   selector: 'sfeir-people',
   templateUrl: 'people.component.html',
   styleUrls: ['people.component.css'],
-  directives: [CardComponent, SearchComponent],
+  directives: [CardComponent, SearchComponent, FormComponent],
   providers: [
     PeopleService,
     {provide: NgLocalization, useClass: CustomLocalization}
@@ -20,6 +21,7 @@ import {
 })
 export class PeopleComponent implements OnInit {
 
+  private dialogStatus = 'inactive';
   private people: any = [];
   private filteredPeople: any = [];
   private query: string = '';
@@ -51,6 +53,17 @@ export class PeopleComponent implements OnInit {
         this.filteredPeople = people;
       }
     );
+  }
+
+  showDialog() {
+    this.dialogStatus = 'active';
+  }
+  hideDialog() {
+    this.dialogStatus = 'inactive';
+  }
+
+  onAdd() {
+
   }
 
 }

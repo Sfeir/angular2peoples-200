@@ -8,3 +8,16 @@ section {
   align-items: center;
   justify-content: center;
 }
+
+.dialog-modal {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  background: rgba(0,0,0,0.5);
+  height: 100%;
+  width: 100%;
+  will-change: opacity;
+}
+.dialog-modal.active {
+  opacity: 1;
+}
