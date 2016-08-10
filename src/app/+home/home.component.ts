@@ -13,10 +13,16 @@ export class HomeComponent implements OnInit {
 
   @Input() input;
 
-  constructor(private ppl: PeopleService) {}
+  constructor(
+    private _service: PeopleService
+  ) {}
 
   ngOnInit() {
-    this.ppl.fetchRandom().subscribe((person) => this.person = person);
+    this.random();
+  }
+
+  random() {
+    this._service.fetchRandom().subscribe((person) => this.person = person);
   }
 
 }
