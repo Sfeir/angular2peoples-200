@@ -65,9 +65,11 @@ export class PeopleComponent implements OnInit {
   onAdd(person) {
     this._service.create(person)
       .flatMap( _ => this._service.fetch() )
-      .subscribe(
-      person => this.hideDialog()
-    )
+      .subscribe( people => {
+        this.people = people;
+        this.filteredPeople = people;
+        this.hideDialog();
+      })
   }
 
   private _filter(people, value) {
