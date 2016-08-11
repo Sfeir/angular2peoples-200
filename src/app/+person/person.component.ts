@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PeopleService, CardComponent } from '../shared/';
+import { PeopleService } from '../shared/';
 import 'rxjs/add/operator/map';
 
 @Component({
   moduleId: module.id,
   selector: 'sfeir-person',
   templateUrl: 'person.component.html',
-  styleUrls: ['person.component.css'],
-  directives: [CardComponent],
-  providers: [PeopleService]
+  styleUrls: ['person.component.css']
 })
 export class PersonComponent implements OnInit {
 

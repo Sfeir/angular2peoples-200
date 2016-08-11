@@ -1,19 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NgLocalization } from '@angular/common';
-import {
-  CardComponent,
-  SearchComponent,
-  PeopleService,
-  CustomLocalization,
-  FormComponent
-} from '../shared/';
+import { PeopleService, CustomLocalization } from '../shared/';
 
 @Component({
   moduleId: module.id,
   selector: 'sfeir-people',
   templateUrl: 'people.component.html',
   styleUrls: ['people.component.css'],
-  directives: [CardComponent, SearchComponent, FormComponent],
   providers: [
     PeopleService,
     {provide: NgLocalization, useClass: CustomLocalization}

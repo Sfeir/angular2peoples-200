@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { PeopleService, CardComponent } from '../shared/';
+import { Component, OnInit } from '@angular/core';
+import { PeopleService } from '../shared/';
 
 @Component({
   moduleId: module.id,
@@ -10,8 +10,6 @@ import { PeopleService, CardComponent } from '../shared/';
 export class HomeComponent implements OnInit {
 
   private person: any = {};
-
-  @Input() input;
 
   constructor(
     private _service: PeopleService

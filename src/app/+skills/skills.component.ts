@@ -7,8 +7,7 @@ import { PeopleService, CardComponent } from '../shared/';
   selector: 'sfeir-skills',
   templateUrl: 'skills.component.html',
   styleUrls: ['skills.component.css'],
-  directives: [CardComponent],
-  providers: [PeopleService]
+  directives: [CardComponent]
 })
 export class SkillsComponent implements OnInit {
 

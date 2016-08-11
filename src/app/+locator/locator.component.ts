@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PeopleService, MapsComponent } from '../shared/';
 import 'rxjs/add/operator/map';
@@ -9,8 +8,7 @@ import 'rxjs/add/operator/map';
   selector: 'sfeir-locator',
   templateUrl: 'locator.component.html',
   styleUrls: ['locator.component.css'],
-  directives: [MapsComponent, ROUTER_DIRECTIVES],
-  providers: [PeopleService]
+  directives: [MapsComponent]
 })
 export class LocatorComponent {
 
