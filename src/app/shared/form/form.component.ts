@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   moduleId: module.id,
@@ -19,20 +19,7 @@ export class FormComponent implements OnInit {
   constructor() {
     this.submit$ = new EventEmitter<any>();
     this.cancel$ = new EventEmitter<any>();
-
-    this.form = new FormGroup({
-      id: new FormControl(''),
-      firstname: new FormControl(''),
-      lastname: new FormControl(''),
-      photo: new FormControl(''),
-      address: new FormGroup({
-        street: new FormControl(''),
-        city: new FormControl(''),
-        postalCode: new FormControl(''),
-      }),
-      phone: new FormControl(''),
-      isManager: new FormControl('')
-    });
+    this.form = this._buildForm();
   }
 
   ngOnInit() {
@@ -47,20 +34,42 @@ export class FormComponent implements OnInit {
   }
 
   submit() {
-    this.submit$.emit(this.patchModel());
-    this.model = {};
+    this.submit$.emit(this._patchModel(this.model, this.form.value));
+    this._reset();
   }
 
   cancel() {
     this.cancel$.emit();
-    this.model = {};
+    this._reset();
   }
 
-  private patchModel() {
-    for(let prop in this.form.value) {
-      this.model[prop] = this.form.value[prop];
+  private _reset() {
+    this.form = this._buildForm();
+  }
+
+  private _buildForm() {
+    return new FormGroup({
+      id: new FormControl(''),
+      firstname: new FormControl('', Validators.required),
+      lastname: new FormControl('', Validators.required),
+      photo: new FormControl('https://randomuser.me/api/portraits/lego/6.jpg'),
+      address: new FormGroup({
+        street: new FormControl(''),
+        city: new FormControl(''),
+        postalCode: new FormControl('')
+      }),
+      phone: new FormControl('', Validators.compose([
+        Validators.required, Validators.pattern('0[0-9]{9}')
+      ])),
+      isManager: new FormControl('')
+    });
+  }
+
+  private _patchModel(model: any, form: any) {
+    for(let prop in form) {
+      model[prop] = form[prop];
     }
-    return this.model;
+    return model;
   }
 
 }

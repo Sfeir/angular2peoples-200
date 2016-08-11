@@ -62,8 +62,10 @@ export class PeopleComponent implements OnInit {
     this.dialogStatus = 'inactive';
   }
 
-  onAdd() {
-    this.hideDialog();
+  onAdd(person) {
+    this._service.create(person).subscribe(
+      person => this.hideDialog()
+    )
   }
 
 }

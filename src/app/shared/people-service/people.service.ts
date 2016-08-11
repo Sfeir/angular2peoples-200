@@ -38,4 +38,9 @@ export class PeopleService {
     return this.http.put(`${BASE_URL}/api/peoples/${person.id}`, person)
       .map( res => res.json() );
   }
+
+  create(person) {
+    return this.http.post(`${BASE_URL}/api/peoples`, JSON.stringify(person))
+      .map( res => res.json() );
+  }
 }

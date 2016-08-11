@@ -15,11 +15,11 @@
       <table style="width: 100%" cellspacing="0">
         <tr>
           <td>
-            <md-input placeholder="First name" name="firstname" formControlName="firstname"></md-input>
-            <md-input placeholder="Last Name" name="lastname" formControlName="lastname"></md-input>
+            <md-input placeholder="First name *" name="firstname" formControlName="firstname"></md-input>
+            <md-input placeholder="Last Name *" name="lastname" formControlName="lastname"></md-input>
           </td>
           <td class="align-right">
-            <img width="100" #photo src="{{ model?.photo || 'https://randomuser.me/api/portraits/lego/6.jpg' }}"/>
+            <img width="100" [src]="form.controls.photo.value"/>
             <input type="hidden" name="photo" formControlName="photo">
           </td>
         </tr>
@@ -34,8 +34,12 @@
         <md-input placeholder="Postal Code" name="postalCode" formControlName="postalCode"></md-input>
       </p>
 
-      <p>
-        <md-input placeholder="Phone" style="width:100%" name="phone" formControlName="phone"></md-input>
+      <p [ngClass]="{'md-warn': form.controls.phone.dirty && form.controls.phone.invalid}">
+        <md-input
+          placeholder="Phone * (ex: 0612345678)"
+          style="width:100%"
+          name="phone"
+          formControlName="phone"></md-input>
       </p>
 
       <p>
@@ -48,7 +52,7 @@
 
   <md-card-actions align="end">
     <button md-button (click)="cancel()" type="button">Cancel</button>
-    <button md-button [disabled]="false" color="primary" type="submit" (click)="submit()">Save</button>
+    <button md-button [disabled]="form.invalid" color="primary" type="submit" (click)="submit()">Save</button>
   </md-card-actions>
 
 </md-card>
