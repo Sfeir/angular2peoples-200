@@ -37,7 +37,6 @@ import { LocatorComponent } from './+locator/';
 import { UpdateComponent } from './+update/';
 import { PeopleService } from './shared/';
 
-const appRoutingProviders: any[] = [];
 const Routing = RouterModule.forRoot(ROUTES, {useHash: true});
 
 @NgModule({
@@ -56,7 +55,7 @@ const Routing = RouterModule.forRoot(ROUTES, {useHash: true});
     UpdateComponent,
     PeopleAppComponent,
   ],
-  providers: [ appRoutingProviders, PeopleService ],
+  providers: [ PeopleService ],
   bootstrap: [ PeopleAppComponent ]
 })
 export class AppModule { }

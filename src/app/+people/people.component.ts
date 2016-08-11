@@ -48,7 +48,8 @@ export class PeopleComponent implements OnInit {
   }
 
   onDelete(person) {
-    this._service.delete(person.id).subscribe((people) => {
+    this._service.delete(person.id)
+      .subscribe((people) => {
         this.people = people;
         this.filteredPeople = people;
       }
@@ -63,7 +64,9 @@ export class PeopleComponent implements OnInit {
   }
 
   onAdd(person) {
-    this._service.create(person).subscribe(
+    this._service.create(person)
+      .flatMap( _ => this._service.fetch() )
+      .subscribe(
       person => this.hideDialog()
     )
   }

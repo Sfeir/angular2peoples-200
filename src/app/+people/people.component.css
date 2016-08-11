@@ -9,6 +9,10 @@ section {
   justify-content: center;
 }
 
+.list {
+  padding-bottom: 100px;
+}
+
 .dialog-modal {
   top: 0;
   position: fixed;

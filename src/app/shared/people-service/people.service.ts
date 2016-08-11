@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, RequestOptions, ResponseContentType, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 const BASE_URL: string = 'http://localhost:3001';
@@ -40,7 +40,8 @@ export class PeopleService {
   }
 
   create(person) {
-    return this.http.post(`${BASE_URL}/api/peoples`, JSON.stringify(person))
+    let requestOptions = { headers: new Headers({'Content-Type': 'application/json'})};
+    return this.http.post(`${BASE_URL}/api/peoples`, JSON.stringify(person), requestOptions)
       .map( res => res.json() );
   }
 }

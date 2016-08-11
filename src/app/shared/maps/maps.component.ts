@@ -1,8 +1,4 @@
-import {
-  Component, Input, Output,
-  ViewChild, ViewChildren, QueryList, forwardRef,
-  EventEmitter
-} from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -13,8 +9,6 @@ import {
 export class MapsComponent {
 
   @Input() people: any[];
-  @Output('onMarkerClick') ee$: EventEmitter<any>;
-
   @ViewChild('map') mapElement: any;
 
   private map: any;
@@ -24,7 +18,6 @@ export class MapsComponent {
   private selectedPerson: any;
 
   constructor() {
-    this.ee$ = new EventEmitter<any>();
     this.selectedPerson = {};
   }
 
@@ -69,22 +62,9 @@ export class MapsComponent {
         // Allow each marker to have an info window
         let infoWindow = this.infoWindow;
         let map = this.map;
-        let ee$ = this.ee$;
         let selectedPerson = this.selectedPerson;
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
           return (clickEvent) => {
-
-            // mapInfos
-            //   .map( (cmp) => {
-            //     cmp.setVisibility(false);
-            //     return cmp;
-            //   })
-            //   .filter( (cmp) => cmp.person.id === person.id)
-            //   .pop()
-            //   .setVisibility(true);
-            //
-            // ee$.emit(person);
-
             infoWindow.setContent(`
               <div>
                 <img width="80" height="80" src="${person.photo}" />
@@ -95,7 +75,6 @@ export class MapsComponent {
             `);
             infoWindow.open(map, marker);
             infoWindow.setPosition(position);
-
           }
         })(marker, index));
 
@@ -107,12 +86,24 @@ export class MapsComponent {
         let person = this.people.pop();
         let position = new google.maps.LatLng(person.geo.lat, person.geo.lng);
         this.map.setCenter(position);
+        let marker = new google.maps.Marker({
+          position: position,
+          map: this.map
+        });
+        this.infoWindow.setContent(`
+          <div>
+            <img width="80" height="80" src="${person.photo}" />
+            <h3>
+              <span>${person.firstname} ${person.lastname}</span>
+            </h3>
+          </div>
+        `);
+        this.infoWindow.open(this.map, marker);
       }
       else {
         // Automatically center the map fitting all markers on the screen
         this.map.fitBounds(this.bounds);
       }
-
 
   }
 

@@ -4,7 +4,7 @@
   <span>{{ filteredPeople.length | i18nPlural: messageMapping}}</span>
 </h1>
 
-<section>
+<section class="list">
   <sfeir-card
     *ngFor="let person of filteredPeople"
     [person]="person"

@@ -52,6 +52,7 @@ export class FormComponent implements OnInit {
       id: new FormControl(''),
       firstname: new FormControl('', Validators.required),
       lastname: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
       photo: new FormControl('https://randomuser.me/api/portraits/lego/6.jpg'),
       address: new FormGroup({
         street: new FormControl(''),
