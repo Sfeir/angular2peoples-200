@@ -24,7 +24,7 @@ export class PeopleComponent implements OnInit {
   private dialogStatus = 'inactive';
   private people: any = [];
   private filteredPeople: any = [];
-  private query: string = '';
+  private _lastValue: string = '';
   private messageMapping: {[k:string]: string} = {
     '=0': 'No person found',
     '=1': 'Found one person',
@@ -41,17 +41,15 @@ export class PeopleComponent implements OnInit {
   }
 
   onSearch(value) {
-    this.filteredPeople = this.people.filter( (person) => {
-      return person.firstname.toLowerCase().startsWith(value)
-        || person.lastname.toLowerCase().startsWith(value);
-      });
+    this._lastValue = value;
+    this.filteredPeople = this._filter(this.people, this._lastValue);
   }
 
   onDelete(person) {
     this._service.delete(person.id)
       .subscribe((people) => {
         this.people = people;
-        this.filteredPeople = people;
+        this.filteredPeople = this._filter(people, this._lastValue);;
       }
     );
   }
@@ -59,6 +57,7 @@ export class PeopleComponent implements OnInit {
   showDialog() {
     this.dialogStatus = 'active';
   }
+
   hideDialog() {
     this.dialogStatus = 'inactive';
   }
@@ -69,6 +68,13 @@ export class PeopleComponent implements OnInit {
       .subscribe(
       person => this.hideDialog()
     )
+  }
+
+  private _filter(people, value) {
+    return people.filter( (person) => {
+      return person.firstname.toLowerCase().startsWith(value)
+        || person.lastname.toLowerCase().startsWith(value);
+      });
   }
 
 }
