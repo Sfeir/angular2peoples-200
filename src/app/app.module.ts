@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MD_MODULES } from './md.module';
 
 import { PeopleAppComponent } from './app.component';
+import { HomeComponent } from './home/';
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import { PeopleAppComponent } from './app.component';
     ...MD_MODULES
   ],
   declarations: [
-    PeopleAppComponent
+    PeopleAppComponent,
+    HomeComponent
   ],
   providers: [ ],
   bootstrap: [
