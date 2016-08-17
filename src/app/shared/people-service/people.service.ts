@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, RequestOptions, ResponseContentType, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-const BASE_URL: string = 'http://localhost:3001';
+const BASE_URL: string = 'http://localhost:9000';
 
 @Injectable()
 export class PeopleService {
