@@ -1,6 +1,6 @@
 <md-toolbar class="extend-toolbar">
   <span>
-    <a [routerLink]="['home']">
+    <a href="#/home">
       <img src="assets/images/logo-sfeir.svg" aria-label="sfeir" alt="Sfeir">
     </a>
   </span>
@@ -8,9 +8,7 @@
   <span class="flex"></span>
 
   <span>
-    <a [routerLink]="['locator']">Maps</a>
-    <a [routerLink]="['people']">List</a>
+    <a href="#/locator">Maps</a>
+    <a href="#/people">List</a>
   </span>
 </md-toolbar>
-
-<router-outlet></router-outlet>
