@@ -1,17 +1,21 @@
 // CORE DEPS
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MdModule } from './md.module';
+import { MD_MODULES } from './md.module';
+
+// import { PeopleAppComponent } from './app.component';
 
 @NgModule({
   imports: [
     BrowserModule,
-    MdModule
+    ...MD_MODULES
   ],
-  declarations: [ ],
+  declarations: [
+    // PeopleAppComponent
+  ],
   providers: [ ],
   bootstrap: [
-    // PeopleAppComponent 
+    // PeopleAppComponent
   ]
 })
 export class AppModule { }

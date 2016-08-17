@@ -1,5 +1,3 @@
-import { NgModule } from '@angular/core';
-
 // MATERIAL DESIGN MODULES
 import { MdIconRegistry } from '@angular2-material/icon/icon-registry';
 import { MdToolbarModule } from '@angular2-material/toolbar';
@@ -19,13 +17,3 @@ export let MD_MODULES: any = [
   MdCardModule,
   MdListModule
 ];
-
-@NgModule({
-  imports: [
-    ...MD_MODULES
-  ],
-  declarations: [ ],
-  providers: [ ],
-  bootstrap: [ ]
-})
-export class MdModule { }
