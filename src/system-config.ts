@@ -60,13 +60,14 @@ const barrels: string[] = [
 
   // training purpose only
   // remove the "+" prefix
+  'app/data',
   'app/home',
   'app/people',
   'app/person',
   'app/skills',
   'app/locator',
   'app/update',
-  
+
   /** @cli-barrel */
 ];
 
