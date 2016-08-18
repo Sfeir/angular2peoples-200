@@ -10,11 +10,11 @@
         <md-card-subtitle>{{ person.entity }}</md-card-subtitle>
         <md-card-subtitle class="contact-info">
           <md-icon svgSrc="images/icon-mail.svg"></md-icon>
-          <a href="mailto:{{ person.firstname }} {{ person.lastname }}&lt;{{ person.contactInfoPro.mail }}&gt;" title="Send an email to {{ person.firstname }} {{ person.lastname }}" class="truncate">{{ person.contactInfoPro.mail }}</a>
+          <a href="mailto:{{ person.firstname }} {{ person.lastname }}&lt;{{ person.mail }}&gt;" title="Send an email to {{ person.firstname }} {{ person.lastname }}" class="truncate">{{ person.mail }}</a>
         </md-card-subtitle>
         <md-card-subtitle class="contact-info">
           <md-icon svgSrc="images/icon-phone.svg"></md-icon>
-          <a href="tel:{{ person.contactInfoPro.fixedPhone }}" title="Call {{ person.firstname }}">{{ person.contactInfoPro.fixedPhone }}</a>
+          <a href="tel:{{ person.phone }}" title="Call {{ person.firstname }}">{{ person.phone }}</a>
         </md-card-subtitle>
 
      </md-card-title-group>
