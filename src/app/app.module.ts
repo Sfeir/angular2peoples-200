@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MD_MODULES } from './md.module';
 
-import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home/';
+import { PeopleAppComponent } from './app.component';
 
 @NgModule({
   imports: [
@@ -17,7 +17,7 @@ import { HomeComponent } from './home/';
   ],
   providers: [ ],
   bootstrap: [
-    PeopleAppComponent
+    HomeComponent
   ]
 })
 export class AppModule { }
