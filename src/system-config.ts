@@ -66,7 +66,7 @@ const barrels: string[] = [
   'app/skills',
   'app/locator',
   'app/update',
-  
+
   /** @cli-barrel */
 ];
 
