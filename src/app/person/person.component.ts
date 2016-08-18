@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PEOPLE } from '../data/';
+import { PEOPLE } from '../_static/people';
 
 @Component({
   moduleId: module.id,
