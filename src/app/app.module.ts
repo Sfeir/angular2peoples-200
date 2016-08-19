@@ -8,6 +8,7 @@ import { RoutesModule } from './routes.module';
 import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home/';
 import { PeopleComponent } from './people/';
+import { CardComponent } from './shared/';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { PeopleComponent } from './people/';
   declarations: [
     HomeComponent,
     PeopleComponent,
+    CardComponent,
     PeopleAppComponent
   ],
   providers: [ ],
