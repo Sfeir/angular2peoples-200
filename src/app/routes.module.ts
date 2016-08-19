@@ -2,11 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, RouterConfig } from '@angular/router';
 
 // APP COMPONENTS
-import { HomeComponent } from './home/';
+// import { HomeComponent } ...
 
 const ROUTES: RouterConfig = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent}
+  // TODO
 ];
 
-export const RoutesModule = RouterModule.forRoot(ROUTES, {useHash: true});
+export const RoutesModule = RouterModule.forRoot(ROUTES);
