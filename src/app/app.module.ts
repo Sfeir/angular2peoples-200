@@ -1,14 +1,16 @@
 // CORE DEPS
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { MD_MODULES } from './md.module';
+import { MdModule } from './md.module';
 
 import { PeopleAppComponent } from './app.component';
 
 @NgModule({
   imports: [
     BrowserModule,
-    ...MD_MODULES
+    MdModule,
+    HttpModule
   ],
   declarations: [
     PeopleAppComponent
