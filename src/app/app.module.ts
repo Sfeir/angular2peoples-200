@@ -8,7 +8,7 @@ import { PeopleAppComponent } from './app.component';
 @NgModule({
   imports: [
     BrowserModule,
-    HttpModule,
+    MdModule
   ],
   declarations: [
     PeopleAppComponent
