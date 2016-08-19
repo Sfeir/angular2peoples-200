@@ -6,6 +6,7 @@ import { MdModule } from './md.module';
 import { RoutesModule } from './routes.module';
 
 import { PeopleAppComponent } from './app.component';
+import { HomeComponent } from './home/';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { PeopleAppComponent } from './app.component';
     RoutesModule
   ],
   declarations: [
+    HomeComponent,
     PeopleAppComponent
   ],
   providers: [ ],
