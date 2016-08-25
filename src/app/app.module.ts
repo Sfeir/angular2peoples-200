@@ -9,6 +9,7 @@ import { RoutesModule } from './routes.module';
 import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home/';
 import { PeopleComponent } from './people/';
+import { UpdateComponent } from './update/';
 import { CardComponent, FormComponent } from './shared/';
 
 @NgModule({
@@ -24,6 +25,7 @@ import { CardComponent, FormComponent } from './shared/';
     PeopleComponent,
     CardComponent,
     FormComponent,
+    UpdateComponent,
     PeopleAppComponent
   ],
   providers: [ ],
