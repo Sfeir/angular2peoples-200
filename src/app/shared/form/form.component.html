@@ -6,7 +6,7 @@
   </md-card-title>
 
   <md-card-content>
-    <form #f="ngForm" ngGroupName="model">
+    <form #f="ngForm">
 
       <p *ngIf="isUpdateMode">
         <md-input style="width:100%" placeholder="ID (disabled)" disabled  name="id" [ngModel]="model.id"></md-input>
