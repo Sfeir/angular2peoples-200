@@ -61,6 +61,10 @@ button[md-fab], a[md-fab] {
   stroke-linecap: round;
 }
 
+.errors {
+  color: red;
+}
+
 @keyframes rotate {
   100% {
     -webkit-transform: rotate(360deg);
