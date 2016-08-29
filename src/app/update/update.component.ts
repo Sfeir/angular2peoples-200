@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
 import { ActivatedRoute, Router } from '@angular/router';
-
-const BASE_URL = 'http://localhost:9000';
+import { PeopleService } from '../shared/';
 
 @Component({
   moduleId: module.id,
@@ -27,25 +25,20 @@ export class UpdateComponent implements OnInit {
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
-    private _http: Http
+    private _service: PeopleService
   ) { }
 
   ngOnInit() {
     this._route.params
       .map((params: any) => params.id)
-      .flatMap(id => this.fetchOne(id))
+      .flatMap(id => this._service.fetchOne(id))
       .subscribe( person => this.person = person);
   }
 
-  fetchOne(id) {
-    return this._http.get(`${BASE_URL}/api/peoples/${id}`)
-      .map( res => res.json() );
-  }
-
   submit(person) {
-    return this._http.put(`${BASE_URL}/api/peoples/${person.id}`, person)
-      .map( res => res.json() )
-      .subscribe( () => this._router.navigate(['/people']) );
+    this._service.update(person).subscribe(
+      res => this._router.navigate(['/people'])
+    );
   }
 
   cancel() {
