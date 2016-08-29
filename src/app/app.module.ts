@@ -10,7 +10,12 @@ import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home/';
 import { PeopleComponent } from './people/';
 import { UpdateComponent } from './update/';
-import { CardComponent, FormComponent, PeopleService } from './shared/';
+import {
+  CardComponent,
+  FormComponent,
+  PeopleService,
+  NaPipe
+} from './shared/';
 
 @NgModule({
   imports: [
@@ -26,7 +31,8 @@ import { CardComponent, FormComponent, PeopleService } from './shared/';
     CardComponent,
     FormComponent,
     UpdateComponent,
-    PeopleAppComponent
+    PeopleAppComponent,
+    NaPipe
   ],
   providers: [
     PeopleService
