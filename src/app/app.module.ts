@@ -1,7 +1,7 @@
 // CORE DEPS
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { MdModule } from './md.module';
 import { RoutesModule } from './routes.module';
@@ -18,7 +18,7 @@ import { CardComponent, FormComponent } from './shared/';
     MdModule,
     HttpModule,
     RoutesModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   declarations: [
     HomeComponent,
