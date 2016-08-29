@@ -23,7 +23,7 @@
 
             </p>
 
-            <p [class.errors]="form.dirty && form.controls.lastname.errors">
+            <p [class.errors]="form.invalid && form.controls.lastname.errors">
 
               <md-input placeholder="Last Name" formControlName="lastname" required name="lastname"></md-input>
 
@@ -39,10 +39,12 @@
         </tr>
       </table>
 
-      <p [class.errors]="form.controls.email.dirty && form.controls.email.errors">
+      <p [class.errors]="form.controls.email.invalid && form.controls.email.errors">
         <md-input placeholder="Email" style="width:100%" formControlName="email" name="email" type="email"></md-input>
 
-        <span *ngIf="form.controls.email.dirty && form.controls.email.errors?.required">Email is mandatory</span>
+        <span *ngIf="form.controls.email.invalid && form.controls.email.errors?.required">Email is mandatory</span>
+
+        <span *ngIf="form.controls.email.errors?.sfeirEmail"><br>Invalid email (ex: chegham.w@sfeir.com)</span>
       </p>
 
       <p>
@@ -54,11 +56,11 @@
         <md-input placeholder="Postal Code" formControlName="postalCode" name="postalCode"></md-input>
       </p>
 
-      <p [class.errors]="form.controls.phone.dirty && form.controls.phone.errors">
+      <p [class.errors]="form.controls.phone.invalid && form.controls.phone.errors">
         <md-input placeholder="Phone (ex: 0612345678)" style="width:100%" formControlName="phone" name="phone"></md-input>
 
-        <span *ngIf="form.controls.phone.dirty && form.controls.phone.errors?.pattern">Phone number must be 10 digits</span>
-        <span *ngIf="form.controls.phone.dirty && form.controls.phone.errors?.required">Phone number is mandatory</span>
+        <span *ngIf="form.controls.phone.invalid && form.controls.phone.errors?.pattern">Phone number must be 10 digits</span>
+        <span *ngIf="form.controls.phone.invalid && form.controls.phone.errors?.required">Phone number is mandatory</span>
       </p>
 
       <p>
