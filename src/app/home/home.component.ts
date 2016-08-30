@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonComponent } from '../person/';
+import { PeopleService } from '../shared/';
 
 @Component({
   moduleId: module.id,
@@ -10,12 +11,20 @@ import { PersonComponent } from '../person/';
 })
 export class HomeComponent implements OnInit {
 
-  name = 'Angular 2';
+  private person: any = {};
 
-  constructor() {
+  constructor(
+    private _service: PeopleService
+  ) {
   }
 
   ngOnInit() {
+    this.random();
+  }
+
+  random() {
+    this._service.fetchRandom()
+      .subscribe((person) => this.person = person);
   }
 
 }

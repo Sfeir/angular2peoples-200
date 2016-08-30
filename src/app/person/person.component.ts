@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PeopleService } from '../shared/';
 
 @Component({
@@ -9,19 +10,21 @@ import { PeopleService } from '../shared/';
 })
 export class PersonComponent implements OnInit {
 
-  private person: any = {};
+  @Input() person: any = {};
 
   constructor(
+    private _route: ActivatedRoute,
+    private _router: Router,
     private _service: PeopleService
   ) { }
 
   ngOnInit() {
-    this.random();
-  }
 
-  random() {
-    this._service.fetchRandom()
-      .subscribe((person) => this.person = person);
+    this._route.params
+      .map((params: any) => params.id)
+      .flatMap(id => this._service.fetchOne(id))
+      .subscribe( person => this.person = person);
+
   }
 
 }

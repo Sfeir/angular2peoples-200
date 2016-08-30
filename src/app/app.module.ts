@@ -8,6 +8,7 @@ import { RoutesModule } from './routes.module';
 
 import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home/';
+import { PersonComponent } from './person/';
 import { PeopleComponent } from './people/';
 import { UpdateComponent } from './update/';
 import {
@@ -28,6 +29,7 @@ import {
   declarations: [
     HomeComponent,
     PeopleComponent,
+    PersonComponent,
     CardComponent,
     FormComponent,
     UpdateComponent,

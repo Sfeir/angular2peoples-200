@@ -44,3 +44,14 @@ md-toolbar-row:nth-child(2) {
   height: 56px;
   margin-top: 56px;
 }
+
+h1 {
+  text-align: center;
+}
+
+section {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}

@@ -68,6 +68,8 @@ const barrels: string[] = [
   'app/locator',
   'app/update',
 
+  'app/shared/list',
+  'app/shared/list-item',
   /** @cli-barrel */
 ];
 
