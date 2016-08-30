@@ -15,7 +15,8 @@ import {
   CardComponent,
   FormComponent,
   PeopleService,
-  NaPipe
+  NaPipe,
+  SfeirBadge
 } from './shared/';
 
 @NgModule({
@@ -34,7 +35,8 @@ import {
     FormComponent,
     UpdateComponent,
     PeopleAppComponent,
-    NaPipe
+    NaPipe,
+    SfeirBadge
   ],
   providers: [
     PeopleService
