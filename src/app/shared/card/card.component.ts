@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
+  @Input('expand') isExpanded: boolean = false;
   @Input() person = {};
   @Output('onPersonDelete') delete$;
 
