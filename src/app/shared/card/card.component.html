@@ -40,4 +40,13 @@
        </button>
      </div>
    </md-card-content>
+
+   <md-card-actions class="skills" *ngIf="isExpanded">
+     <h3 class="style-scope people-card">Skills</h3>
+
+     <button md-raised-button *ngFor="let skill of person.skills">
+       {{ skill }}
+     </button>
+
+   </md-card-actions>
 </md-card>
